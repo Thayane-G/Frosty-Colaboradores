@@ -132,4 +132,4 @@ O projeto foi organizado em arquivos separados para facilitar a manutenção e l
 
 **Thayane Gabriele**
 
-Projeto desenvolvido para o desafio técnico da Frosty.
+Projeto realizado como parte do desafio técnico da Frosty.
