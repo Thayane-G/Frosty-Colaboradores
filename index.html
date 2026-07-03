@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Frosty | Sistema de Cadastro</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- LANDING -->
+    <section id="landing">
+
+        <!-- ONDAS E FORMAS DO FUNDO -->
+        <div class="waves">
+
+            <!-- Onda roxa/rosa topo esquerdo -->
+            <svg class="wave-svg wave-top-left" viewBox="0 0 700 260" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="gradLeftTop" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#7c3aed"/>
+                        <stop offset="50%" stop-color="#d946ef"/>
+                        <stop offset="100%" stop-color="#ec4899"/>
+                    </linearGradient>
+                </defs>
+
+                <path 
+                    fill="url(#gradLeftTop)"
+                    d="M0,0 
+                       H470
+                       C430,55 365,78 285,70
+                       C205,62 170,122 95,128
+                       C52,132 22,118 0,108
+                       Z">
+                </path>
+            </svg>
+
+
+            <!-- Onda laranja topo direito -->
+            <svg class="wave-svg wave-top-right" viewBox="0 0 760 330" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="gradRightTop" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#fb7185"/>
+                        <stop offset="55%" stop-color="#fb923c"/>
+                        <stop offset="100%" stop-color="#f59e0b"/>
+                    </linearGradient>
+                </defs>
+
+                <path 
+                    fill="url(#gradRightTop)"
+                    d="M760,0
+                       H185
+                       C245,60 330,75 430,68
+                       C535,60 585,110 650,165
+                       C690,200 725,215 760,220
+                       Z">
+                </path>
+            </svg>
+
+
+            <!-- Mancha verde lateral suave -->
+            <svg class="wave-svg wave-middle-green" viewBox="0 0 700 360" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="gradMiddleGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#22c55e"/>
+                        <stop offset="100%" stop-color="#14b8a6"/>
+                    </linearGradient>
+                </defs>
+
+                <path 
+                    fill="url(#gradMiddleGreen)"
+                    d="M65,190
+                       C95,75 205,35 320,52
+                       C420,68 500,32 595,102
+                       C680,165 690,255 610,305
+                       C535,352 440,300 330,310
+                       C215,322 125,315 78,260
+                       C42,218 45,205 65,190
+                       Z">
+                </path>
+            </svg>
+
+
+            <!-- Ondas inferiores integradas -->
+            <svg class="bottom-waves-svg" viewBox="0 0 1440 330" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="pinkBottom" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#ec4899" stop-opacity="1"/>
+                        <stop offset="35%" stop-color="#fb7185" stop-opacity=".95"/>
+                        <stop offset="58%" stop-color="#f97316" stop-opacity=".25"/>
+                        <stop offset="72%" stop-color="#f97316" stop-opacity="0"/>
+                    </linearGradient>
+
+                    <linearGradient id="blueBottom" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#2563eb" stop-opacity="0"/>
+                        <stop offset="28%" stop-color="#2563eb" stop-opacity=".85"/>
+                        <stop offset="50%" stop-color="#06b6d4" stop-opacity=".9"/>
+                        <stop offset="72%" stop-color="#14b8a6" stop-opacity=".55"/>
+                        <stop offset="100%" stop-color="#14b8a6" stop-opacity="0"/>
+                    </linearGradient>
+
+                    <linearGradient id="purpleBottom" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#7c3aed" stop-opacity="0"/>
+                        <stop offset="45%" stop-color="#7c3aed" stop-opacity=".25"/>
+                        <stop offset="68%" stop-color="#9333ea" stop-opacity="1"/>
+                        <stop offset="100%" stop-color="#7c3aed" stop-opacity="1"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- rosa esquerda -->
+                <path
+                    fill="url(#pinkBottom)"
+                    d="M0,185
+                       C130,150 260,155 395,190
+                       C540,230 660,225 795,185
+                       C955,140 1120,135 1440,180
+                       L1440,330
+                       L0,330
+                       Z">
+                </path>
+
+                <!-- azul centro -->
+                <path
+                    fill="url(#blueBottom)"
+                    d="M0,250
+                       C160,260 300,290 470,245
+                       C640,200 760,160 930,190
+                       C1070,215 1200,250 1440,210
+                       L1440,330
+                       L0,330
+                       Z">
+                </path>
+
+                <!-- roxo direita -->
+                <path
+                    fill="url(#purpleBottom)"
+                    d="M0,310
+                       C160,250 310,250 470,280
+                       C650,315 760,280 900,235
+                       C1060,185 1225,220 1440,245
+                       L1440,330
+                       L0,330
+                       Z">
+                </path>
+            </svg>
+
+        </div>
+
+
+        <!-- BOLINHAS 3D -->
+        <div class="floating-shapes">
+            <span class="bubble b1"></span>
+            <span class="bubble b2"></span>
+            <span class="bubble b3"></span>
+            <span class="bubble b4"></span>
+            <span class="bubble b5"></span>
+            <span class="bubble b6"></span>
+            <span class="bubble b7"></span>
+            <span class="bubble b8"></span>
+            <span class="bubble b9"></span>
+            <span class="bubble b10"></span>
+        </div>
+
+
+        <!-- ELEMENTOS DECORATIVOS -->
+
+<img src="./assets/pote-colorido.png" alt="Pote de sorvete colorido" class="product product-left">
+
+<img src="./assets/pote-chocolate.png" alt="Pote de sorvete com chocolate" class="product product-right">
+
+<img src="./assets/picole-ninho.png" alt="Picolé de ninho com chocolate" class="product product-top">
+
+<img src="./assets/morango.png" alt="Morango" class="product fruit-strawberry">
+
+<img src="./assets/chocolate.png" alt="Chocolate" class="product chocolate-piece">
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <div class="landing-content">
+
+            <h1 class="brand-name">Frosty</h1>
+
+            <p class="tagline">
+                Mais que sorvete, <span>momentos incríveis!</span>
+            </p>
+
+            <div class="divider">
+                <span></span>
+                <i class="fa-solid fa-heart"></i>
+                <span></span>
+            </div>
+
+            <h2>Sistema de Cadastro de Colaboradores</h2>
+
+            <button id="startButton">
+                Iniciar
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+<main id="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+        <div class="sidebar-logo">
+            <img src="./assets/sorvete-creme.png" alt="Sorvete Frosty">
+        </div>
+
+        <div class="sidebar-logo-text">
+        <h2>Frosty</h2>
+        <p>Sistema de<br>Colaboradores</p>
+        </div>
+        </div>
+
+        <nav class="menu">
+            <a href="#" class="menu-item active">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="#" class="menu-item">
+                <i class="fa-solid fa-users"></i>
+                Colaboradores
+            </a>
+
+            <a href="#" class="menu-item">
+                <i class="fa-solid fa-code"></i>
+                CRUD
+            </a>
+
+            <a href="#" class="menu-item">
+                <i class="fa-solid fa-location-dot"></i>
+                ViaCEP
+            </a>
+
+            <a href="#" class="menu-item">
+                <i class="fa-solid fa-circle-info"></i>
+                Sobre
+            </a>
+        </nav>
+
+        <div class="profile-card">
+            <div class="profile-avatar">TG</div>
+
+            <div>
+                <h3>Thayane Gabriele</h3>
+                <p>Desenvolvedora</p>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <section class="dashboard-area">
+
+        <header class="dashboard-header">
+
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Buscar colaborador..."
+                >
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="header-actions">
+                <div class="notification-wrapper">
+            <button class="notification-btn" id="notificationButton" title="Ver total de colaboradores">
+                <i class="fa-regular fa-bell"></i>
+                <span id="notificationBadge">0</span>
+            </button>
+
+            <div class="notification-box" id="notificationBox">
+                <button class="close-notification" id="closeNotification" title="Fechar">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div class="notification-mini-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div class="notification-info">
+                    <h4>Status dos colaboradores</h4>
+                    <p id="notificationText">Nenhum colaborador cadastrado no momento.</p>
+                </div>
+            </div>
+        </div>
+
+                <button id="newUserButton" class="new-user-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    Novo Colaborador
+                </button>
+            </div>
+
+        </header>
+
+
+        <section class="dashboard-content">
+
+            <!-- FORMULÁRIO -->
+            <section class="form-card">
+
+                <div class="card-title">
+                    <div>
+                        <i class="fa-solid fa-user"></i>
+                        <h2>Dados do Colaborador</h2>
+                    </div>
+
+                    <span id="formMode">Novo cadastro</span>
+                </div>
+
+                <form id="userForm">
+
+                    <input type="hidden" id="userId">
+
+                    <div class="form-grid">
+
+                        <div class="input-group">
+                            <label for="name">Nome Completo <span>*</span></label>
+                            <input type="text" id="name" placeholder="Digite o nome completo" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="email">E-mail <span>*</span></label>
+                            <input type="email" id="email" placeholder="exemplo@email.com" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="phone">Telefone <span>*</span></label>
+                            <input type="text" id="phone" placeholder="(85) 99999-9999" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="cpf">CPF</label>
+                            <input type="text" id="cpf" placeholder="000.000.000-00">
+                        </div>
+
+                        <div class="input-group cep-group">
+                            <label for="cep">CEP <span>*</span></label>
+
+                            <div class="cep-row">
+                                <input type="text" id="cep" placeholder="00000-000" required>
+
+                                <button type="button" id="searchCepButton">
+                                    Buscar CEP
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="street">Rua <span>*</span></label>
+                            <input type="text" id="street" placeholder="Digite a rua" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="number">Número <span>*</span></label>
+                            <input type="text" id="number" placeholder="Número" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="district">Bairro <span>*</span></label>
+                            <input type="text" id="district" placeholder="Digite o bairro" required>
+                        </div>
+
+                        <div class="input-group">
+                        <label for="city">Cidade <span>*</span></label>
+                        <input type="text" id="city" placeholder="Digite a cidade" required>
+                        </div>
+
+                        <div class="input-group">
+                        <label for="state">Estado <span>*</span></label>
+                        <input type="text" id="state" placeholder="Digite o estado" required>
+                        </div>
+
+                        <div class="input-group">
+                        <label for="uf">UF <span>*</span></label>
+                        <input type="text" id="uf" placeholder="UF" maxlength="2" required>
+                        </div>
+
+                        </div>
+
+                        <div class="form-actions">
+                        <button type="submit" id="submitButton" class="save-btn">
+                            <i class="fa-regular fa-floppy-disk"></i>
+                            Cadastrar
+                        </button>
+
+                        <button type="button" id="clearButton" class="clear-btn">
+                            <i class="fa-regular fa-trash-can"></i>
+                            Limpar
+                        </button>
+                        </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- TABELA -->
+            <section class="table-card">
+
+                <div class="card-title">
+                    <div>
+                        <i class="fa-solid fa-users"></i>
+                        <h2>Colaboradores Cadastrados</h2>
+                    </div>
+
+                    <span id="totalUsers">Total: 0</span>
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>Cidade</th>
+                                <th>Estado</th>
+                                <th>UF</th>
+                                <th>Telefone</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="usersTableBody">
+                            <!-- Os colaboradores serão inseridos via JavaScript -->
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div id="emptyState" class="empty-state">
+                    <i class="fa-regular fa-folder-open"></i>
+                    <p>Nenhum colaborador cadastrado ainda.</p>
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <footer class="dashboard-footer">
+            <p>Desenvolvido por Thayane Gabriele</p>
+            <span>|</span>
+            <p>Desafio Técnico Frosty</p>
+        </footer>
+
+    </section>
+
+</main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="./js/utils.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/crud.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+</html>

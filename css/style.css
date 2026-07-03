@@ -1,0 +1,55 @@
+@import url("animations.css");
+@import url("landing.css");
+@import url("dashboard.css");
+@import url("responsive.css");
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #16C47F;
+    --green-dark: #0D9F66;
+
+    --purple: #7C3AED;
+    --purple-dark: #6D28D9;
+
+    --blue: #3B82F6;
+
+    --orange: #F97316;
+    --yellow: #FBBF24;
+
+    --pink: #EC4899;
+    --rose: #FB7185;
+
+    --white: #FFFFFF;
+
+    --text: #1F2937;
+    --text-dark: #111827;
+    --text-light: #64748B;
+
+    --gray: #F5F7FA;
+    --border: #E5E7EB;
+
+    --shadow: 0 25px 50px rgba(0, 0, 0, .15);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--text);
+    overflow: hidden;
+    background: var(--gray);
+}
+
+button,
+input {
+    font-family: inherit;
+}
