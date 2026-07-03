@@ -12,6 +12,17 @@ Além do CRUD completo, o projeto conta com integração ao ViaCEP, preenchendo 
 
 ---
 
+## !Preview do projeto
+
+<img width="1918" height="1020" alt="Captura de tela 2026-07-03 073317" src="https://github.com/user-attachments/assets/f3e2e417-1e12-42d4-8098-59fb79a665bb" />
+<img width="1918" height="1026" alt="Captura de tela 2026-07-03 080035" src="https://github.com/user-attachments/assets/399f3a59-c418-47c0-87fb-8432f7f29474" />
+<img width="1918" height="1021" alt="Captura de tela 2026-07-03 080058" src="https://github.com/user-attachments/assets/1f24d79d-869e-4298-a105-b501666fe4a9" />
+<img width="1918" height="1022" alt="Captura de tela 2026-07-03 080113" src="https://github.com/user-attachments/assets/9b81e43e-e52b-481c-ba0d-e04185ad780b" />
+<img width="1918" height="1020" alt="Captura de tela 2026-07-03 080126" src="https://github.com/user-attachments/assets/36effd1d-f412-4796-bcfa-d937741aab25" />
+<img width="1918" height="1015" alt="Captura de tela 2026-07-03 080135" src="https://github.com/user-attachments/assets/c895f3b7-1bb1-46a4-8521-a9cdd39ff1f2" />
+
+---
+
 ## Funcionalidades
 
 - Cadastro de colaboradores
@@ -114,18 +125,6 @@ O projeto foi organizado em arquivos separados para facilitar a manutenção e l
 - `api.js`: integração com a API ViaCEP;
 - `crud.js`: funções de cadastro, listagem, edição e exclusão;
 - `main.js`: inicialização do sistema, eventos principais, menu e notificações.
-
----
-
-
-## !Preview do projeto
-
-<img width="1918" height="1020" alt="Captura de tela 2026-07-03 073317" src="https://github.com/user-attachments/assets/f3e2e417-1e12-42d4-8098-59fb79a665bb" />
-<img width="1918" height="1026" alt="Captura de tela 2026-07-03 080035" src="https://github.com/user-attachments/assets/399f3a59-c418-47c0-87fb-8432f7f29474" />
-<img width="1918" height="1021" alt="Captura de tela 2026-07-03 080058" src="https://github.com/user-attachments/assets/1f24d79d-869e-4298-a105-b501666fe4a9" />
-<img width="1918" height="1022" alt="Captura de tela 2026-07-03 080113" src="https://github.com/user-attachments/assets/9b81e43e-e52b-481c-ba0d-e04185ad780b" />
-<img width="1918" height="1020" alt="Captura de tela 2026-07-03 080126" src="https://github.com/user-attachments/assets/36effd1d-f412-4796-bcfa-d937741aab25" />
-<img width="1918" height="1015" alt="Captura de tela 2026-07-03 080135" src="https://github.com/user-attachments/assets/c895f3b7-1bb1-46a4-8521-a9cdd39ff1f2" />
 
 ---
 
