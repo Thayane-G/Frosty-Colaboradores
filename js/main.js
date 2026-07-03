@@ -311,6 +311,130 @@ cpfInput.addEventListener("input", () => {
     cpfInput.value = formatCpf(cpfInput.value);
 });
 
+    /* MENSAGENS DO SISTEMA */
+
+const toastContainer = document.createElement("div");
+toastContainer.classList.add("toast-container");
+document.body.appendChild(toastContainer);
+
+function showToast(message, type = "success") {
+    const toast = document.createElement("div");
+
+    const icons = {
+        success: "fa-circle-check",
+        warning: "fa-triangle-exclamation",
+        danger: "fa-circle-xmark",
+        info: "fa-circle-info"
+    };
+
+    const titles = {
+        success: "Sucesso",
+        warning: "Atenção",
+        danger: "Aviso",
+        info: "Informação"
+    };
+
+    toast.className = `toast-card ${type}`;
+
+    toast.innerHTML = `
+        <div class="toast-icon">
+            <i class="fa-solid ${icons[type] || icons.info}"></i>
+        </div>
+
+        <div class="toast-text">
+            <strong>${titles[type] || titles.info}</strong>
+            <p></p>
+        </div>
+
+        <button class="toast-close" title="Fechar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    `;
+
+    toast.querySelector("p").textContent = message;
+
+    toastContainer.appendChild(toast);
+
+    setTimeout(() => {
+        toast.classList.add("show");
+    }, 10);
+
+    function removeToast() {
+        toast.classList.remove("show");
+
+        setTimeout(() => {
+            toast.remove();
+        }, 250);
+    }
+
+    toast.querySelector(".toast-close").addEventListener("click", removeToast);
+
+    setTimeout(removeToast, 3500);
+}
+
+
+/* MODAL DE CONFIRMAÇÃO */
+
+const confirmOverlay = document.createElement("div");
+confirmOverlay.classList.add("confirm-overlay");
+
+confirmOverlay.innerHTML = `
+    <div class="confirm-modal">
+        <button class="confirm-close" title="Fechar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="confirm-icon">
+            <i class="fa-solid fa-trash-can"></i>
+        </div>
+
+        <h3 id="confirmTitle">Confirmar ação</h3>
+        <p id="confirmMessage">Tem certeza que deseja continuar?</p>
+
+        <div class="confirm-actions">
+            <button class="confirm-cancel" type="button">Cancelar</button>
+            <button class="confirm-delete" type="button">Excluir</button>
+        </div>
+    </div>
+`;
+
+document.body.appendChild(confirmOverlay);
+
+const confirmTitle = document.getElementById("confirmTitle");
+const confirmMessage = document.getElementById("confirmMessage");
+const confirmCancelButton = confirmOverlay.querySelector(".confirm-cancel");
+const confirmDeleteButton = confirmOverlay.querySelector(".confirm-delete");
+const confirmCloseButton = confirmOverlay.querySelector(".confirm-close");
+
+function hideConfirmModal() {
+    confirmOverlay.classList.remove("show");
+}
+
+function showConfirm({ title, message, confirmText = "Confirmar", cancelText = "Cancelar", onConfirm }) {
+    confirmTitle.textContent = title;
+    confirmMessage.textContent = message;
+    confirmDeleteButton.textContent = confirmText;
+    confirmCancelButton.textContent = cancelText;
+
+    confirmOverlay.classList.add("show");
+
+    confirmDeleteButton.onclick = () => {
+        hideConfirmModal();
+
+        if (typeof onConfirm === "function") {
+            onConfirm();
+        }
+    };
+
+    confirmCancelButton.onclick = hideConfirmModal;
+    confirmCloseButton.onclick = hideConfirmModal;
+}
+
+confirmOverlay.addEventListener("click", event => {
+    if (event.target === confirmOverlay) {
+        hideConfirmModal();
+    }
+});
 
 /* INICIALIZAÇÃO */
 

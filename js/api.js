@@ -4,7 +4,7 @@ async function searchCep() {
     const cep = cleanCep(cepInput.value);
 
     if (cep.length !== 8) {
-        alert("Digite um CEP válido com 8 números.");
+        showToast("Digite um CEP válido com 8 números.", "warning");
         return;
     }
 
@@ -16,7 +16,7 @@ async function searchCep() {
         const data = await response.json();
 
         if (data.erro) {
-            alert("CEP não encontrado.");
+            showToast("CEP não encontrado.", "warning");
             return;
         }
 
@@ -28,8 +28,10 @@ async function searchCep() {
 
         numberInput.focus();
 
+        showToast("Endereço preenchido automaticamente pelo ViaCEP.", "success");
+
     } catch (error) {
-        alert("Erro ao buscar o CEP. Verifique sua conexão e tente novamente.");
+        showToast("Erro ao buscar o CEP. Verifique sua conexão e tente novamente.", "danger");
     } finally {
         searchCepButton.textContent = "Buscar CEP";
         searchCepButton.disabled = false;

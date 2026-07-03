@@ -89,7 +89,7 @@ function validateForm(userData) {
         !userData.state ||
         !userData.uf
     ) {
-        alert("Preencha todos os campos obrigatórios.");
+        showToast("Preencha todos os campos obrigatórios.", "warning");
         return false;
     }
 
@@ -98,7 +98,7 @@ function validateForm(userData) {
     });
 
     if (emailAlreadyExists) {
-        alert("Já existe um colaborador cadastrado com este e-mail.");
+        showToast("Já existe um colaborador cadastrado com este e-mail.", "warning");
         return false;
     }
 
@@ -112,7 +112,7 @@ function createUser(userData) {
     renderUsers();
     clearForm();
 
-    alert("Colaborador cadastrado com sucesso!");
+    showToast("Colaborador cadastrado com sucesso.", "success");
 }
 
 function updateUser(userData) {
@@ -131,14 +131,14 @@ function updateUser(userData) {
     renderUsers();
     clearForm();
 
-    alert("Colaborador atualizado com sucesso!");
+    showToast("Cadastro atualizado com sucesso.", "info");
 }
 
 function editUser(id) {
     const user = users.find(user => user.id === id);
 
     if (!user) {
-        alert("Colaborador não encontrado.");
+        showToast("Colaborador não encontrado.", "warning");
         return;
     }
 
@@ -176,19 +176,25 @@ function editUser(id) {
 }
 
 function deleteUser(id) {
-    const confirmDelete = confirm("Tem certeza que deseja excluir este colaborador?");
+    const user = users.find(user => user.id === id);
 
-    if (!confirmDelete) {
+    if (!user) {
+        showToast("Colaborador não encontrado.", "warning");
         return;
     }
 
-    users = users.filter(user => user.id !== id);
+    showConfirm({
+        title: "Excluir colaborador",
+        message: `Tem certeza que deseja excluir ${user.name}? Essa ação não poderá ser desfeita.`,
+        confirmText: "Excluir",
+        cancelText: "Cancelar",
+        onConfirm: () => {
+            users = users.filter(user => user.id !== id);
 
-    saveUsers();
-    renderUsers();
+            saveUsers();
+            renderUsers();
 
-    alert("Colaborador removido com sucesso!");
+            showToast("Colaborador removido com sucesso.", "danger");
+        }
+    });
 }
-
-window.editUser = editUser;
-window.deleteUser = deleteUser;
